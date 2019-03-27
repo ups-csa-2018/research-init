@@ -1,0 +1,68 @@
+\documentclass[a4paper, twocolumn]{article}
+
+\usepackage{censor}
+\usepackage{lipsum}
+\usepackage{tagging}
+\usepackage[top=2cm, bottom=3cm, left=2cm, right=2cm]{geometry}
+\setlength{\columnsep}{1cm}
+
+\begin{document}
+
+\tagged{redacted}{}
+\untagged{redacted}{\StopCensoring}
+
+\title{Tweet summarization methods' state of the art}
+\author{
+    \censor{Jules Lamur},
+    \censor{Oscar Che},
+    \censor{Quentin Mestre} and
+    \censor{Jeremy Duran}}
+\date{}
+
+\maketitle
+
+\begin{abstract}
+
+Dummy citation of Einstein \cite{einstein}.
+
+\lipsum[1]
+
+\end{abstract}
+
+\section{Introduction}
+
+\lipsum[2]
+\lipsum[3]
+
+\section{Topic's characteristics}
+
+\lipsum[4]
+
+\section{Summarization methods}
+
+\lipsum[5]
+
+\subsection{Extractive methods}
+
+\lipsum[6]
+\lipsum[7]
+
+\subsection{Abstractive methods}
+
+\lipsum[8]
+\lipsum[9]
+
+\section{Evaluation methods}
+
+\lipsum[8]
+\lipsum[9]
+
+\section{Conclusion}
+
+\lipsum[8]
+\lipsum[9]
+
+\bibliography{sota}
+\bibliographystyle{ieeetr}
+
+\end{document}
