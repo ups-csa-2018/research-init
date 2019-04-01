@@ -1,10 +1,13 @@
 \documentclass[a4paper, twocolumn]{article}
 
+\usepackage{biblatex}
 \usepackage{censor}
 \usepackage{lipsum}
 \usepackage{tagging}
 \usepackage[top=2cm, bottom=3cm, left=2cm, right=2cm]{geometry}
 \setlength{\columnsep}{1cm}
+
+\bibliography{sota}
 
 \usetag{draft}
 \tagged{draft}{
@@ -197,7 +200,6 @@ generated summary contains informative and less ambiguous phrases.
 
 \section{Conclusion}
 
-\bibliography{sota}
-\bibliographystyle{ieeetr}
+\printbibliography
 
 \end{document}
