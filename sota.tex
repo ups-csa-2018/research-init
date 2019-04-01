@@ -6,12 +6,20 @@
 \usepackage[top=2cm, bottom=3cm, left=2cm, right=2cm]{geometry}
 \setlength{\columnsep}{1cm}
 
+\usetag{draft}
+\tagged{draft}{
+    \usepackage{draftwatermark}
+    \SetWatermarkLightness{0.9}
+    \SetWatermarkScale{4}
+}
+
 \begin{document}
 
 \tagged{redacted}{}
 \untagged{redacted}{\StopCensoring}
 
-\title{Tweet summarization methods' state of the art}
+\title{Tweet summarization methods' state of the art \\
+    \large Université de Toulouse 3}
 \author{
     \censor{Jules Lamur},
     \censor{Oscar Che},
