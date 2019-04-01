@@ -31,44 +31,171 @@
 
 \begin{abstract}
 
-Dummy citation of Einstein \cite{einstein}.
-
-\lipsum[1]
-
 \end{abstract}
 
 \section{Introduction}
 
-\lipsum[2]
-\lipsum[3]
+Social media has become a big part of our society's daily lifestyle, on average
+a person has 7.6 accounts and spends 2 hours a day on social medias. In the top
+5 is Twitter along with Facebook, youtube, Instagram and snapchat. Since it’s
+launch in 2006 Twitter has accumulated 1.3 billion accounts with 126 million
+daily active users.
+
+The microblogging website limits its users to 280 characters per posts (or as
+twitter calls them tweets), but that does not stop its users as 500 million
+tweets are generated each day. In fact, twitter users say and react to whatever
+they like, may it be on the new Avengers trailer, videos, news or events,
+making it a great resource for researchers.
+
+With the rapid growth of tweets, it is sometimes hard for users to grasp
+essential information, a solution is twitter summarization. It aims to give a
+concise summary from a huge amount of tweets in a given topic. Applications
+could be helping users to understand topics, help agencies monitor events,
+crisis progress or even disaster relief moreover due to the huge amount of data
+and the rapidness of the information, it can also be interesting to look into
+Realtime summarizations.
+
+Document summarization has been around for several years, and despite having
+spawned multiple research papers, it still makes of a worthy opponent due to
+the nature of tweets and how researchers approach their noisy-emoticon-short
+nature.
 
 \section{Topic's characteristics}
 
-\lipsum[4]
+Twitter isn’t only a social network which provides usual “social” features such
+as chatting , having a profile , write freely about anything, sharing medias...
+it’s also a really popular microblogging platform. Nowadays, it’s really easy
+for one’s  to post instantly and frequently about their own interests, and due
+to this easiness , the amount of posts in microblogs became very huge compared
+with that of the traditional blogs.That huge amount of data represents a huge
+pool of information , however since each tweet has a short format , the
+relevant information density is low and for this reason it’s hard to catch
+trends and public opinions on a topic.There is also the follow feature that
+allows one user to follow friends, or celebrities or a person that represents
+huge interest from the user. Last really twitter-specific feature is the
+‘retweet’ that allows the user to take someone’s tweet and share it with his
+followers in order to spread that tweet, and the user can add anything he wants
+to legend that tweet. All those features create strong topic-related connexions
+between microblogs that will increase again the information pool. That’s why
+summarization is a rich research field and interesting in order to not be
+flooded by this huge amount of information.
 
 \section{Summarization methods}
 
-\lipsum[5]
+We distinguished two approaches in performing tweeter summarization :
+Extractive and abstractive.We’ll discuss about their main features ,
+differences ,similarities and methods they used in order to produce a twitter
+summary. However their relevance is function of the user’s  appreciation.
 
 \subsection{Extractive methods}
 
-\lipsum[6]
-\lipsum[7]
+Extractive summarization is the process of selecting sentences, words , or even
+tweets  ( in this case )  as a whole   from the given data set and to put them
+together. The summary can take many forms like : Top tweets related on a topic
+, Most relevant tweet , group of tweets  , group of keywords...The main feature
+of an extractive summary is that the content of the summary is truly authentic.
+
+\subsubsection{Graph based approach}
+
+One way to extract a good and readable summary is to establish a graph that
+represents all the sentences of selected tweets, in which all words is a node
+and are related to other words. All these nodes will be weighted by their
+number of occurrences in the set of sentences. (Sharifi et al. in 2015)[1]
+describes a method based on a graph that extract a summary from a set of
+tweets/sentences. It consists in first get all  the results (tweets) of a
+research on a specific topic using Twitter’s API (it returns 1500 results
+maximum), then it execute the “phase reinforcement algorithm”. This algorithm
+build a graph using as root node the most occurrent word (or set of words). The
+graph is organised form left to right, and in the middle is the root node, the
+leafs on the left hand side are the beginning of the sentences, and the leafs
+on the right hand side are the ends of the sentences. A word w of a sentence s
+is linked in the graph with its previous neighbor in s, and its next neighbor
+in s. All nodes are weighted according to their frequency of occurrence
+respective of their word ordering from the root. Now the graph is build, the
+algorithm has to find the most weighted path and then build a new graph using
+the same way putting the phrase resulting to this path as the root of the new
+graph. It will be repeated until the graph is not empty. Then the summary is
+generated.
+
+\subsubsection{Clustering approach}
+
+There are numerous techniques that use clustering approaches in order to
+produce an extractive summary. Clustering is the task of grouping a set of
+objects ( here it will be a set of tweets ) that are more similar between them,
+then it will  form a cluster.
+The paper by Kim ,Tae-Yeon in 2014[2] introduce a clustering approach to
+produce an extractive summary. Their method consist in:  first they form a
+keyword graph thanks to a keywords analysis (Term frequency-inverse document
+frequency also known as TF-IDF) that will produce a graph of keywords , then
+they use the K-clique Clustering method in order to group the tweets.( A
+k-clique is a sub-graph which has k nodes and the nodes are fully connected to
+the others) .Tweets that contain all the words of that clique will have high
+probability to be similar to each others and then, they’re more likely to form
+a cluster.This method produce as a result , a cluster of tweets depending of
+the keyword that the user searched for . Another approach that is worth
+notifying for , is from the work of Xintian yang in 2012, that uses a
+clustering approach based on a time window , their algorithm is called
+(SPUR)[3] . In this method , tweets will be clustered by 1 hour time interval,
+(they consider that tweets that were posted within 1 hour will be more similar
+between them than tweets appearing 2 hours later) then  they extract the most
+used sentence from that cluster and evaluate and rank each tweet by their
+utility and values, at the end, they include the most relevant tweets in their
+summary.
+
+
+\subsubsection{Statistical approach}
 
 \subsection{Abstractive methods}
 
-\lipsum[8]
-\lipsum[9]
+We can define Abstractive summaries as “ Someone is making for you a summary
+after being on twitter in your place “ in fact , Abstractive summaries will
+generate sentences that may not appear in the input data, the goal here is to
+generate human-understandable sentences with high information density so the
+user has a global idea of what’s happening while decreasing his search efforts.
+We must notify that those methods are fewer than the extractives one.
+
+\subsubsection{Graph based approach}
+
+The summarizations methods that will be presented here will not much differ
+from the one presented in the Extractive section , but it’s interesting to see
+how their summaries differ. We’ll have a look on Andrei Olariu ‘ s work in
+2014[X], and it’s Twitter Online word Graph Summarizer ( TOWGS ), this approach
+is interesting because it doesn’t save any of the tweets, it also skips any
+clustering step, they instead build word graphs from trigrams ( n-grams of
+words )  , each trigrams will represent a node and their corresponding edges
+will be weighted based on the frequencies of that trigram related to the
+tweets. But the more important part is that this method is Online , in the
+previous techniques we presented the word graphs were discarded after
+generating the summary, that’s not the case here: for the online summary , the
+graph is constantly updated with tweets and their initial word graph “forget”
+the old data via a time decaying window. Then in order to generate an
+abstractive summary this technique is looking for the highest scoring path by
+using a greedy search strategy  in the graph, this path connects the special
+words which marks the beginning and the end of the sentence and propose an
+updated summary sentence as a result. TOWGS method is a real contender for the
+most advanced abstractive real time method on tweets summarization.
+
+\subsubsection{Others}
+
+A paper from Nilambari Maruti Dhanve from the Solapur University in India, uses
+Speech Acts in his paper Twitter Trending Topic Summarization Using Speech Act
+[X]  for his abstractive summarization. A Speech Acts is something expressed by
+an individual that not only presents information, but perform an action as
+well. For example "Hi, Eric. How are things going?" is performing the action of
+Greeting, and "Could you pass me the mashed potatoes, please?" corresponds to
+request.  They use a data set to extract phrases (n-grams) and assign them a
+part of speech either being a verb, noun,comment or question. They then
+implement a ranking to the words and select the most salient ones for the
+summary. To construct the abstractive summary the apply a template of :
+for”<topic word>”,people<verb frame>”ngrame”{,(and)<verb frame>”<ngrams>”} to
+the ngrams.  The “ngrams” are the salient words/phrases extracted for the major
+speech act types. A “verb frame” is a verb or verb phrase specific to a
+particular speech act type.The  algorithm  favors longer ngrams so that the
+generated summary contains informative and less ambiguous phrases.
 
 \section{Evaluation methods}
 
-\lipsum[8]
-\lipsum[9]
-
 \section{Conclusion}
-
-\lipsum[8]
-\lipsum[9]
 
 \bibliography{sota}
 \bibliographystyle{ieeetr}
