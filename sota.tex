@@ -103,22 +103,22 @@ of an extractive summary is that the content of the summary is truly authentic.
 One way to extract a good and readable summary is to establish a graph that
 represents all the sentences of selected tweets, in which all words is a node
 and are related to other words. All these nodes will be weighted by their
-number of occurrences in the set of sentences. (Sharifi et al. in 2015)[1]
-describes a method based on a graph that extract a summary from a set of
-tweets/sentences. It consists in first get all  the results (tweets) of a
-research on a specific topic using Twitter’s API (it returns 1500 results
-maximum), then it execute the “phase reinforcement algorithm”. This algorithm
-build a graph using as root node the most occurrent word (or set of words). The
-graph is organised form left to right, and in the middle is the root node, the
-leafs on the left hand side are the beginning of the sentences, and the leafs
-on the right hand side are the ends of the sentences. A word w of a sentence s
-is linked in the graph with its previous neighbor in s, and its next neighbor
-in s. All nodes are weighted according to their frequency of occurrence
-respective of their word ordering from the root. Now the graph is build, the
-algorithm has to find the most weighted path and then build a new graph using
-the same way putting the phrase resulting to this path as the root of the new
-graph. It will be repeated until the graph is not empty. Then the summary is
-generated.
+number of occurrences in the set of sentences.
+\textcite{sharifi_summarizing_2010} describes a method based on a graph that
+extract a summary from a set of tweets/sentences. It consists in first get all
+the results (tweets) of a research on a specific topic using Twitter’s API (it
+returns 1500 results maximum), then it execute the “phase reinforcement
+algorithm”. This algorithm build a graph using as root node the most occurrent
+word (or set of words). The graph is organised form left to right, and in the
+middle is the root node, the leafs on the left hand side are the beginning of
+the sentences, and the leafs on the right hand side are the ends of the
+sentences. A word w of a sentence s is linked in the graph with its previous
+neighbor in s, and its next neighbor in s. All nodes are weighted according to
+their frequency of occurrence respective of their word ordering from the root.
+Now the graph is build, the algorithm has to find the most weighted path and
+then build a new graph using the same way putting the phrase resulting to this
+path as the root of the new graph. It will be repeated until the graph is not
+empty. Then the summary is generated.
 
 \subsubsection{Clustering approach}
 
@@ -126,24 +126,23 @@ There are numerous techniques that use clustering approaches in order to
 produce an extractive summary. Clustering is the task of grouping a set of
 objects ( here it will be a set of tweets ) that are more similar between them,
 then it will  form a cluster.
-The paper by Kim ,Tae-Yeon in 2014[2] introduce a clustering approach to
-produce an extractive summary. Their method consist in:  first they form a
-keyword graph thanks to a keywords analysis (Term frequency-inverse document
-frequency also known as TF-IDF) that will produce a graph of keywords , then
-they use the K-clique Clustering method in order to group the tweets.( A
-k-clique is a sub-graph which has k nodes and the nodes are fully connected to
-the others) .Tweets that contain all the words of that clique will have high
-probability to be similar to each others and then, they’re more likely to form
-a cluster.This method produce as a result , a cluster of tweets depending of
-the keyword that the user searched for . Another approach that is worth
-notifying for , is from the work of Xintian yang in 2012, that uses a
-clustering approach based on a time window , their algorithm is called
-(SPUR)[3] . In this method , tweets will be clustered by 1 hour time interval,
-(they consider that tweets that were posted within 1 hour will be more similar
-between them than tweets appearing 2 hours later) then  they extract the most
-used sentence from that cluster and evaluate and rank each tweet by their
-utility and values, at the end, they include the most relevant tweets in their
-summary.
+The paper \textcite{kim_tweet_2014} introduce a clustering approach to produce
+an extractive summary. Their method consist in:  first they form a keyword
+graph thanks to a keywords analysis (Term frequency-inverse document frequency
+also known as TF-IDF) that will produce a graph of keywords , then they use the
+K-clique Clustering method in order to group the tweets.( A k-clique is a
+sub-graph which has k nodes and the nodes are fully connected to the others)
+.Tweets that contain all the words of that clique will have high probability to
+be similar to each others and then, they’re more likely to form a cluster.This
+method produce as a result , a cluster of tweets depending of the keyword that
+the user searched for . Another approach that is worth notifying for , is from
+the work of Xintian yang in 2012, that uses a clustering approach based on a
+time window , their algorithm is called (SPUR)[3] . In this method , tweets
+will be clustered by 1 hour time interval, (they consider that tweets that were
+posted within 1 hour will be more similar between them than tweets appearing 2
+hours later) then  they extract the most used sentence from that cluster and
+evaluate and rank each tweet by their utility and values, at the end, they
+include the most relevant tweets in their summary.
 
 
 \subsubsection{Statistical approach}
