@@ -1,10 +1,9 @@
-\documentclass[runningheads]{llncs}
+\documentclass{llncs}
 
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage[sorting=none]{biblatex}
-\usepackage{censor}
 \usepackage{graphicx}
 \usepackage{lipsum}
 \usepackage{tagging}
@@ -21,18 +20,19 @@
 }
 \begin{document}
 
-\tagged{redacted}{}
-\untagged{redacted}{\StopCensoring}
-
 \title{Tweet summarization methods' state of the art}
 
-\author{Oscar Che \and
-Quentin Mestre \and
-Jeremy Duran \and
-Jules Lamur \\
-\email{\{oscar.che,quentin.mestre2,jeremy.duran,jules.lamur\}@univ-tlse3.fr}}
+\tagged{redacted}{
+    \author{Anonymous authors}
+}
+\untagged{redacted}{
+    \author{Oscar Che \and
+    Quentin Mestre \and
+    Jeremy Duran \and
+    Jules Lamur \\
+    \email{\{oscar.che,quentin.mestre2,jeremy.duran,jules.lamur\}@univ-tlse3.fr}}
+}
 
-\authorrunning{O. Che et al.}
 \institute{University of Toulouse 3 — Paul Sabatier}
 
 \maketitle
